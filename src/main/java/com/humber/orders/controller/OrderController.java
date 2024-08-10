@@ -9,7 +9,7 @@ import com.humber.orders.model.Order;
 import com.humber.orders.service.OrderService;
 
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/orders")
 public class OrderController {
 
     private final OrderService orderService;
