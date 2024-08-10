@@ -2,6 +2,8 @@ package com.humber.orders.kafka;
 
 import java.util.List;
 
+import com.humber.orders.model.OrderItem;
+
 
 
 public class OrderPlacedEvent {
