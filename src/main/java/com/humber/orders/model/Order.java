@@ -15,7 +15,8 @@ public class Order {
     @Column(nullable = false)
     private BigDecimal totalPrice;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItems;
 
 	public Long getId() {
@@ -42,6 +43,11 @@ public class Order {
 		this.orderItems = orderItems;
 	}
 
+	
+	public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
     
 }
 
